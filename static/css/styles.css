@@ -1,0 +1,30 @@
+/*--------------------------------------------Global Styles Styles*/
+
+html,
+body {
+   width: 100%;
+   height: 100%;
+   margin: 0px;
+   background-color: whitesmoke;
+   padding-top: 80px;
+   padding-left: 30px;
+}    
+
+
+/*Navbar*/
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 6rem;
+}
+
+.navbar {
+    margin-bottom: 6rem; 
+    }
+
+/*Forms*/
+/*.accountform {*/
+/*    padding-top: 100px;*/
+/*}*/
+
+form {
+     width: 30%;
+ }
