@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+{% block page_title %}All Tickets{% endblock %} {% block content %}
+<!-- Content -->
+<section class='table-section'>
+    <div class='container'>
+        <div class='row'>
+            <h1> Tickets </h1>
+            <div class="table-responsive mt-5">
+                <table class='table '>
+                    <thead>
+                        <tr>
+                            <th class="font-size" scope="col">Title</th>
+                            <th class="d-none d-md-table-cell font-size" scope="col">Author</th>
+                            <th class="d-none d-md-table-cell font-size" scope="col">Views</th>
+                            <th class="d-none d-md-table-cell font-size" scope="col">Comments</th>
+                            <th class="d-none d-md-table-cell font-size" scope="col">Upvotes</th>
+                            <th class="d-none d-md-table-cell font-size" scope="col">Status</th>
+                            <th class="d-none d-md-table-cell font-size" scope="col">Date Created</th>
+                            <th class="font-size" scope="col">Type</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in tickets %}
+                        <tr>
+                            <td>
+                                <h5>{{ ticket.title}}</h5>
+                            </td>
+                            <td class='d-none d-md-table-cell'>
+                                {{ ticket.author }}
+                            </td>
+                            <td class='d-none d-md-table-cell'>
+                                <i class="far fa-eye"></i> {{ ticket.views }}
+                            </td>
+                            <td class='d-none d-md-table-cell'>
+                                <i class="fa fa-comment comment"></i> {{ ticket.comments }}
+                            </td>
+                            <td class='d-none d-md-table-cell'>
+                                <i class="fa fa-thumbs-up upvotes"></i> {{ ticket.upvotes }}
+                            </td>
+                            <td class='d-none d-md-table-cell'>
+                                {{ ticket.status }}
+                            </td>
+                            <td class='d-none d-md-table-cell'>
+                                {{ ticket.created_date}}
+                            </td>
+                            {% if ticket.ticket_type == 'BUG' %}
+                            <td>
+                                <i class="fa fa-bug bug fa-2x"></i>
+                            </td>
+                            {% else %}
+                            <td>
+                                <i class="fas fa-lightbulb fa-2x"></i>
+                            </td>
+                            {% endif %}
+                            <td>
+                                <form class="button-style" method="GET" action="{% url 'ticket_view' ticket.id %}"><input class='btn btn-info' type="submit" value="View Ticket"></form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
