@@ -1,9 +1,62 @@
-{% extends 'base.html' %} {% load bootstrap_tags %} {% load staticfiles %} {% block page_title %}View Ticket{% endblock %} {% block content %}
-<!-- Content -->
- <div class="container mt-5">
- <br>
- <br>
-<h2> Hello Clarice</h2>
+{% extends 'base.html' %} {% load bootstrap_tags %} {% block page_heading %}
+<br>
+<br>
+<div class="container-fluid ml-5 mt-5">
+    <div class="row">
+        <div class=" col-sm-6 mb-4">
+            <h3><span class="badge badge-dark">Ticket #{{ticket.id}}: {{ticket.title}} {% endblock %} {% block content %}</span></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-sm-6 ">
+            {% if ticket.status == 'TO DO' %}
+            <h4><span class="badge badge-pill badge-primary">Status: To do</span></h4>
+            {% elif ticket.status == "DOING" %}
+            <h4><span class="badge badge-pill badge-warning">Status: Doing</span></h4>
+            {% else %}
+            <h4><span class="badge badge-pill badge-success">Status: Done</span></h4>
+            {% endif %}
+            <h4><span class="badge badge-pill badge-danger">Upvotes: {{ ticket.upvotes }}</span></h4>
+            <h4><span class="badge badge-pill badge-info mb-3">Category: {{ ticket.ticket_type }}</span></h4>
+        </div>
+        <div class=" col-sm-6">
+            <h4><span class="badge badge-dark">Created: {{ ticket.created_date.date }} at {{ ticket.created_date.time}}</span></h4>
+            <!--<h4><span class="badge badge-dark">Updated: {{ ticket.most_recent_update.date }} at {{ ticket.most_recent_update.time}}</span></h4>-->
+            <h4><span class="badge badge-dark"> Author: {{ ticket.author }}</span></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-sm-6 mt-3 mb-2">
+            <h2><span class="badge badge-dark">Description</span></h2>
+            <p>{{ ticket.description }}</p>
+        </div>
+    </div>
+    <div class="row mb-5 ml-2">
+        <a href="{% url 'get_tickets' %}" class="btn btn-default">Go Back</a>
+    </div>
+    <h2><span class="badge badge-dark">Comments</span></h2>
+    <div class="row">
+        <div class="col-sm-6 ml-2">
+            {% for comment in get_comments %}
+            <blockquote>
+                <h4>{{ comment.user }}</h4>
+                <p>{{ comment.created_date}}</p>
+                <p>{{ comment.comment }}</p>
+            </blockquote>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-sm-12 mb-5">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %} {{ comment_form | as_bootstrap }}
+                <button type="submit" class="btn btn-info">Add Comment</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
 </div>
 
 {% endblock %}

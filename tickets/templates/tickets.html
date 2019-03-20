@@ -5,19 +5,22 @@
 <!-- Content -->
 <section class='table-section'>
     <div class='container'>
-        <div class='row'>
+    <br>
+        <br>
+        <br>
+        <div class='row mt-5'>
             <h1> Tickets </h1>
             <div class="table-responsive mt-5">
                 <table class='table '>
                     <thead>
                         <tr>
                             <th class="font-size" scope="col">Title</th>
-                            <th class="d-none d-md-table-cell font-size" scope="col">Author</th>
-                            <th class="d-none d-md-table-cell font-size" scope="col">Views</th>
-                            <th class="d-none d-md-table-cell font-size" scope="col">Comments</th>
-                            <th class="d-none d-md-table-cell font-size" scope="col">Upvotes</th>
-                            <th class="d-none d-md-table-cell font-size" scope="col">Status</th>
-                            <th class="d-none d-md-table-cell font-size" scope="col">Date Created</th>
+                            <th class="d-none d-md-table-cell font-style" scope="col">Author</th>
+                            <th class="d-none d-md-table-cell font-style" scope="col">Description</th>
+                            <th class="d-none d-md-table-cell font-style" scope="col">Views</th>
+                            <th class="d-none d-md-table-cell font-style" scope="col">Upvotes</th>
+                            <th class="d-none d-md-table-cell font-style" scope="col">Status</th>
+                            <th class="d-none d-md-table-cell font-style" scope="col">Date&nbsp;Created</th>
                             <th class="font-size" scope="col">Type</th>
                             <th scope="col"></th>
                         </tr>
@@ -26,16 +29,16 @@
                         {% for ticket in tickets %}
                         <tr>
                             <td>
-                                <h5>{{ ticket.title}}</h5>
+                                <h4>{{ ticket.title}}</h4>
                             </td>
                             <td class='d-none d-md-table-cell'>
                                 {{ ticket.author }}
                             </td>
-                            <td class='d-none d-md-table-cell'>
-                                <i class="far fa-eye"></i> {{ ticket.views }}
+                             <td class='d-none d-md-table-cell'>
+                                {{ ticket.description|truncatewords:6 }}
                             </td>
                             <td class='d-none d-md-table-cell'>
-                                <i class="fa fa-comment comment"></i> {{ ticket.comments }}
+                                <i class="far fa-eye"></i> {{ ticket.views }}
                             </td>
                             <td class='d-none d-md-table-cell'>
                                 <i class="fa fa-thumbs-up upvotes"></i> {{ ticket.upvotes }}

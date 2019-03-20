@@ -85,7 +85,7 @@ form {
      border-top: none; 
 }
 
-.font-size {
+.font-style {
     font-size: 20px;
     color: #8FBDAE;
     }
@@ -95,3 +95,16 @@ form {
     border: none;
     border-radius: 300px;
 }
+ /*Custom button stylese*/
+.btn-default
+{
+  background-color: #8FBDAE;
+  color:#FFF;
+  border-color: #2F3E48;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+
+  background-color: #270E58;
+  color:#FFF;
+  border-color: #31347B;
+ }

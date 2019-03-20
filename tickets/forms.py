@@ -1,5 +1,5 @@
 from django import forms
-from .models import Ticket, Comment
+from .models import Ticket, TicketComment
 from django.utils import timezone
 
 # The form for a ticket
@@ -13,5 +13,5 @@ class TicketForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     
     class Meta:
-        model = Comment
+        model = TicketComment
         fields = ( 'comment', )

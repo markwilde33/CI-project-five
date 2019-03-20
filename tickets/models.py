@@ -6,7 +6,7 @@ from django.utils import timezone
 class Ticket(models.Model):
    
     STATUS_CHOICES = (
-        ('TODO', 'To Do'),
+        ('TO DO', 'To Do'),
         ('DOING', 'Doing'),
         ('DONE', 'Done')
     )
@@ -16,14 +16,12 @@ class Ticket(models.Model):
         ('FEATURE', 'Feature')
     )
 
-    user = models.CharField(max_length=255)
-    author = models.ForeignKey(User, related_name='ticket_creator')
+    author = models.ForeignKey(User, related_name='ticket_maker')
     title = models.CharField(max_length=255)
     description = models.TextField()
     ticket_type = models.CharField(max_length=20, choices=TICKET_CHOICES)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='TO DO')
     upvotes = models.IntegerField(default=0)
-    user_upvoted_list = models.ManyToManyField(User, related_name='ticket_upvoter')
     created_date = models.DateTimeField(auto_now_add=True)
     most_recent_update = models.DateTimeField(blank=True, null=True,
     default=timezone.now)
@@ -34,15 +32,12 @@ class Ticket(models.Model):
         return self.title
 
 # The comment model
-class Comment(models.Model):
+class TicketComment(models.Model):
     
-    author = models.ForeignKey(User, related_name='ticket_creator')
     comment = models.TextField()
-    ticket = models.ForeignKey(Ticket)
-    created_date = models.DateTimeField(auto_now_add=True)
-    most_recent_update = models.DateTimeField(blank=True, null=True,
-    default=timezone.now)
-    
+    ticket = models.ForeignKey(Ticket, related_name='comments')
+    user = models.ForeignKey(User)
+    created_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
    
 
     def __str__(self):
