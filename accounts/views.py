@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from .forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
+from tickets.models import Ticket
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -45,12 +47,6 @@ def login(request):
     return render(request, 'login.html', args)
 
 
-@login_required
-def profile(request):
-    """A view that displays the profile page of a logged in user"""
-    return render(request, 'profile.html')
-
-
 def register(request):
     """A view that manages the registration form"""
     if request.method == 'POST':
@@ -73,3 +69,11 @@ def register(request):
 
     args = {'user_form': user_form}
     return render(request, 'register.html', args)
+    
+
+@login_required
+def profile(request):
+    """A view that displays the profile page of a logged in user"""
+   
+    tickets = Ticket.objects.filter(author=request.user)
+    return render(request, 'profile.html', { 'tickets':tickets})
