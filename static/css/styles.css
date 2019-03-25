@@ -12,37 +12,30 @@ body {
 html,
 body,
 .table {
-    color: #F2E9E9;
+    color: #FDF5EA;
 }
 
-
-/*html,*/
-
-/*body {*/
-
-/*   width: 100%;*/
-
-/*   height: 100%;*/
-
-/*   margin: 0px;*/
-
-/*   background-color: whitesmoke;*/
-
-/*   padding-top: 80px;*/
-
-/*   padding-left: 30px;*/
-
-/*}    */
-
 /*Navbar*/
+.navbar-dark .navbar-brand  {
+    color: #8FBDAE;
+}
 
-.navbar-expand-md .navbar-nav .nav-link {
-    padding-right: 6rem;
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 18px;
+    color: #B9C2CA;
+
 }
 
 .navbar {
     margin-bottom: 6rem;
 }
+
+.navbar-brand {
+    font-size: 22px;
+}    
+
+.navbar .navbar-nav li a:hover{
+    color: #8FBDAE!important;}
 
 /*Forms*/
 
@@ -70,6 +63,17 @@ form {
 .py-3 {
     padding-top: 0.5rem!important;
 }
+
+.footer-style{
+    color: #778899;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 
 
 /*Table form tickets page*/
@@ -108,3 +112,34 @@ form {
   color:#FFF;
   border-color: #31347B;
  }
+ 
+ /*Custom icon scolors*/
+ .bug-icon-color{
+     color: #F4A4B2;
+     }
+ .feature-icon-color{
+    color: #EEE8AF;
+     }
+     
+  /*Custom heading margin*/   
+.heading-margin {
+    margin-top: 80px;
+}
+
+
+ /*ticket table style*/  
+.table-fade {
+   background: rgba(255,255,255,0.1);
+}
+
+/*miscellaneaous style*/  
+
+/*user name in comments section*/  
+.user-style{
+    color: #8FBDAE;
+    }
+    
+/*secondary color for  td in table section*/  
+/*.td-color{*/
+/*    color: #044584!important;*/
+/*    }*/
