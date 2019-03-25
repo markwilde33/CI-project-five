@@ -19,6 +19,7 @@ from django.contrib import admin
 from home.views import index
 from accounts import urls as urls_accounts
 from tickets import urls as urls_tickets
+from django.views import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

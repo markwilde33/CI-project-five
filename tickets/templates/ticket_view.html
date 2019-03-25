@@ -39,7 +39,7 @@
         <div class="col-sm-6 ml-2">
             {% for comment in get_comments %}
             <blockquote>
-                <h4>{{ comment.user }}</h4>
+                <h4 class="user-style">{{ comment.user }}</h4>
                 <p>{{ comment.created_date}}</p>
                 <p>{{ comment.comment }}</p>
             </blockquote>

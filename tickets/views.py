@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-import datetime
 from django.contrib.auth.models import User
 from .models import Ticket, TicketComment
 from .forms import TicketForm, CommentForm
@@ -29,7 +28,6 @@ def ticket_view(request, pk):
     """
     ticket = get_object_or_404(Ticket, pk=pk)
     if request.method == "POST":
-        
         comment_form = CommentForm(request.POST, request.FILES)
         
         if comment_form.is_valid():
@@ -42,8 +40,24 @@ def ticket_view(request, pk):
     else:
         comment_form = CommentForm()
         get_comments = TicketComment.objects.filter(ticket__pk=ticket.pk)
-        total_comments = len(get_comments)
         ticket.views += 1
         ticket.save()
-        return render(request, 'ticket_view.html', {'ticket':ticket, 'get_comments':get_comments, 'total_comments ':total_comments , 'comment_form':comment_form})
+        return render(request, 'ticket_view.html', {'ticket':ticket, 'get_comments':get_comments, 'comment_form':comment_form})
   
+def create_or_edit_ticket(request, pk=None):
+    """
+     Create a view that allows a user to create
+     or edit a ticket depending on if the
+     Ticket ID is null or not
+     """
+    ticket = get_object_or_404(Ticket, pk=pk) if pk else None
+    if request.method == "POST":
+        ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
+        if ticket_form.is_valid():
+            ticket = ticket_form.save()
+            ticket.author = request.user
+            ticket.save()
+            return redirect(ticket_view, ticket.pk)
+    else:
+        ticket_form = TicketForm(instance=ticket)
+    return render(request, 'ticket_form.html', {'ticket_form': ticket_form})
