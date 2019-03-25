@@ -21,7 +21,7 @@
         </div>
         <div class=" col-sm-6">
             <h4><span class="badge badge-dark">Created: {{ ticket.created_date.date }} at {{ ticket.created_date.time}}</span></h4>
-            <!--<h4><span class="badge badge-dark">Updated: {{ ticket.most_recent_update.date }} at {{ ticket.most_recent_update.time}}</span></h4>-->
+            <h4><span class="badge badge-dark">Status Last Updated: {{ ticket.most_recent_update.date }} at {{ ticket.most_recent_update.time}}</span></h4>
             <h4><span class="badge badge-dark"> Author: {{ ticket.author }}</span></h4>
         </div>
     </div>
@@ -40,7 +40,7 @@
             {% for comment in get_comments %}
             <blockquote>
                 <h4 class="user-style">{{ comment.user }}</h4>
-                <p>{{ comment.created_date}}</p>
+                <p><small>{{ comment.created_date.date }} at {{ comment.created_date.time}}</small></p>
                 <p>{{ comment.comment }}</p>
             </blockquote>
             {% endfor %}
