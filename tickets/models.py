@@ -22,6 +22,7 @@ class Ticket(models.Model):
     ticket_type = models.CharField(max_length=20, choices=TICKET_CHOICES)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='TO DO')
     upvotes = models.IntegerField(default=0)
+    upvoters = models.ManyToManyField(User, related_name='upvoters')
     created_date = models.DateTimeField(auto_now_add=True)
     most_recent_update = models.DateTimeField(blank=True, null=True,
     default=timezone.now)

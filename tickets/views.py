@@ -4,6 +4,10 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from .models import Ticket, TicketComment
 from .forms import TicketForm, CommentForm
+from issue_tracker import settings
+from django.contrib import messages
+import stripe
+
 
 @login_required()
 def get_tickets(request):
@@ -16,6 +20,7 @@ def get_tickets(request):
                                 ).order_by('-most_recent_update')
     return render(request, "tickets.html", {'tickets': tickets})
 
+
 @login_required() 
 def ticket_view(request, pk):
     """
@@ -24,7 +29,7 @@ def ticket_view(request, pk):
     to the 'ticket_view.html' template, return a
     comment form for users to add a comment,
     and return all previously added comments,
-    Or return a 404 error if ticket is not found
+    or return a 404 error if ticket is not found
     """
     ticket = get_object_or_404(Ticket, pk=pk)
     if request.method == "POST":
@@ -43,12 +48,13 @@ def ticket_view(request, pk):
         ticket.views += 1
         ticket.save()
         return render(request, 'ticket_view.html', {'ticket':ticket, 'get_comments':get_comments, 'comment_form':comment_form})
+ 
   
 def create_or_edit_ticket(request, pk=None):
     """
      Create a view that allows a user to create
      or edit a ticket depending on if the
-     Ticket ID is null or not
+     ticket ID is null or not
      """
     ticket = get_object_or_404(Ticket, pk=pk) if pk else None
     if request.method == "POST":
@@ -61,3 +67,28 @@ def create_or_edit_ticket(request, pk=None):
     else:
         ticket_form = TicketForm(instance=ticket)
     return render(request, 'ticket_form.html', {'ticket_form': ticket_form})
+
+
+@login_required() 
+def delete_ticket(request, pk):
+    """
+    Delete a bug
+    """
+    ticket =  get_object_or_404(Ticket, pk=pk) 
+    ticket.delete()
+    return redirect('profile')
+     
+
+@login_required
+def upvote_bug(request, pk):
+    """
+    Upvote a bug
+    """
+    if request.method == "POST":
+        bug = get_object_or_404(Ticket, pk=pk)
+        bug.upvotes += 1
+        bug.save()
+        return redirect(reverse('ticket_view', kwargs={'pk': pk}))
+
+     
+        
