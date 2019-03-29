@@ -5,6 +5,7 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Roboto', sans-serif;
+  color: #FDF5EA;
 }
 
 
@@ -44,6 +45,19 @@ html, body {
     padding-top: 0.5rem!important;
 }
 
+.footer-style{
+    color: #8FBDAE;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #B9C2CA;
+    }
 
 /*Table form tickets page*/
 form {
@@ -63,3 +77,13 @@ form {
 .custom-color {
     color: #FDF5EA;
     }
+    
+    
+/*Custom icon colors*/
+ .icon-color-one{
+     color: #F4A4B2;
+     }
+ .icon-color-two{
+    color: #EEE8AF;
+     }
+     

@@ -65,7 +65,7 @@ form {
 }
 
 .footer-style{
-    color: #778899;
+    color: #8FBDAE;
 }
 
 a {
@@ -74,6 +74,9 @@ a {
     background-color: transparent;
 }
 
+a:hover {
+    color: #B9C2CA;
+    }
 
 
 /*Table form tickets page*/
@@ -113,11 +116,11 @@ a {
   border-color: #31347B;
  }
  
- /*Custom icon scolors*/
- .bug-icon-color{
+ /*Custom icon colors*/
+ .icon-color-one{
      color: #F4A4B2;
      }
- .feature-icon-color{
+ .icon-color-two{
     color: #EEE8AF;
      }
      
