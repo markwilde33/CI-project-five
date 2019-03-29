@@ -4,8 +4,6 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from .models import Ticket, TicketComment
 from .forms import TicketForm, CommentForm
-from issue_tracker import settings
-from django.contrib import messages
 import stripe
 
 
