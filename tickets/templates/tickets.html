@@ -1,15 +1,13 @@
-{% extends 'base.html' %}
-{% load bootstrap_tags %}
-{% load staticfiles %}
-{% block content %}
+{% extends 'base.html' %} {% load bootstrap_tags %} {% load staticfiles %} {% block content %}
 <!-- Content -->
 <section class='table-section'>
     <div class='container'>
-    <br>
+        <br>
         <br>
         <br>
         <div class='row mt-5'>
-            {% block page_title %}<h1> All Tickets</h1>{% endblock %} 
+            {% block page_title %}
+            <h1> All Tickets</h1>{% endblock %}
             <div class="table-responsive mt-5 pb-5">
                 <table class='table table-striped table-dark table-fade'>
                     <thead>
@@ -34,32 +32,38 @@
                             <td class='d-none d-md-table-cell'>
                                 {{ ticket.author }}
                             </td>
-                             <td class='d-none d-md-table-cell'>
+                            <td class='d-none d-md-table-cell'>
                                 {{ ticket.description|truncatewords:6 }}
                             </td>
-                            <td class='d-none d-md-table-cell'>
-                                <i class="far fa-eye"></i> {{ ticket.views }}
+                            <td class='d-none d-md-table-cell cell-color-one'>
+                                <i class="far fa-eye icon-color-three"></i> {{ ticket.views }}
+                            </td>
+                            <td class='d-none d-md-table-cell cell-color-one'>
+                                <i class="fa fa-thumbs-up upvotes icon-color-three"></i> {{ ticket.upvotes }}
                             </td>
                             <td class='d-none d-md-table-cell'>
-                                <i class="fa fa-thumbs-up upvotes"></i> {{ ticket.upvotes }}
+                                {% if ticket.status == 'TO DO' %}
+                                <span class="badge badge-pill badge-primary badge-font-size">&nbsp;To do&nbsp;</span>
+                                {% elif ticket.status == "DOING" %}
+                                <span class="badge badge-pill badge-warning badge-font-size">&nbsp;Doing&nbsp;</span>
+                                {% else %}
+                                <span class="badge badge-pill badge-success badge-font-size">&nbsp;Done&nbsp;</span>
+                                {% endif %}
                             </td>
                             <td class='d-none d-md-table-cell'>
-                                {{ ticket.status }}
-                            </td>
-                            <td class='d-none d-md-table-cell'>
-                                {{ ticket.created_date}}
+                                {{ ticket.created_date }} at {{ ticket.created_date.time}}
                             </td>
                             {% if ticket.ticket_type == 'BUG' %}
                             <td>
-                                <i class="fa fa-bug bug fa-2x bug-icon-color"></i>
+                                <i class="fa fa-bug bug fa-2x icon-color-one"></i>
                             </td>
                             {% else %}
                             <td>
-                                <i class="fas fa-lightbulb fa-2x feature-icon-color"></i>
+                                <i class="fas fa-lightbulb fa-2x icon-color-two"></i>
                             </td>
                             {% endif %}
                             <td>
-                                <form class="button-style" method="GET" action="{% url 'ticket_view' ticket.id %}"><input class='btn btn-info' type="submit" value="View Ticket"></form>
+                                <form class="button-style" method="GET" action="{% url 'ticket_view' ticket.id %}"><input class='btn btn-info btn-sm' type="submit" value="View Ticket"></form>
                             </td>
                         </tr>
                         {% endfor %}

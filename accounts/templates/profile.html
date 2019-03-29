@@ -30,7 +30,9 @@
                             <th class="d-none d-md-table-cell font-style" scope="col">Upvotes</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Status</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Date&nbsp;Created</th>
-                            <th class="font-style" scope="col">Type</th>
+                            <th class="d-none d-sm-table-cell font-style" scope="col">Type</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -41,32 +43,45 @@
                                 <h5>{{ ticket.title}}</h5>
                             </td>
                             <td class='d-none d-md-table-cell'>
-                                {{ ticket.description}}
+                                {{ ticket.description|truncatewords:6}}
+                            </td>
+                             <td class='d-none d-md-table-cell cell-color-one'>
+                                <i class="far fa-eye icon-color-three"></i> {{ ticket.views }}
+                            </td>
+                            <td class='d-none d-md-table-cell cell-color-one'>
+                                <i class="fa fa-thumbs-up upvotes icon-color-three"></i> {{ ticket.upvotes }}
                             </td>
                             <td class='d-none d-md-table-cell'>
-                                <i class="far fa-eye"></i> {{ ticket.views }}
-                            </td>
-                            <td class='d-none d-md-table-cell'>
-                                <i class="fa fa-thumbs-up upvotes"></i> {{ ticket.upvotes }}
-                            </td>
-                            <td class='d-none d-md-table-cell'>
-                                {{ ticket.status }}
+                                {% if ticket.status == 'TO DO' %}
+                                <span class="badge badge-pill badge-primary badge-font-size">&nbsp;To do&nbsp;</span>
+                                {% elif ticket.status == "DOING" %}
+                                <span class="badge badge-pill badge-warning badge-font-size">&nbsp;Doing&nbsp;</span>
+                                {% else %}
+                                <span class="badge badge-pill badge-success badge-font-size">&nbsp;Done&nbsp;</span>
+                                {% endif %}
                             </td>
                             <td class='d-none d-md-table-cell'>
                                 {{ ticket.created_date}}
                             </td>
                             {% if ticket.ticket_type == 'BUG' %}
-                            <td>
-                                <i class="fa fa-bug bug fa-2x bug-icon-color"></i>
+                            <td class="d-none d-sm-table-cell">
+                                <i class="fa fa-bug bug fa-2x icon-color-one"></i>
                             </td>
                             {% else %}
-                            <td>
-                                <i class="fas fa-lightbulb fa-2x feature-icon-color"></i>
+                            <td class="d-none d-sm-table-cell">
+                                <i class="fas fa-lightbulb fa-2x icon-color-two"></i>
                             </td>
                             {% endif %}
-                            <td>
-                                <form class="button-style" method="GET" action="{% url 'ticket_view' ticket.id %}"><input class='btn btn-info' type="submit" value="View Ticket"></form>
+                             <td>
+                            <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-primary btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a>
                             </td>
+                            <td>
+                            <button href="{% url 'delete_ticket' ticket.id %}" class="btn btn-danger btn-sm">Delete</button> 
+                            </td>
+                            <td>
+                                <form class="button-style " method="GET" action="{% url 'ticket_view' ticket.id %}"><input class='btn btn-info btn-sm' type="submit" value="&nbsp;&nbsp;View&nbsp;&nbsp;"></form>
+                            </td>
+                            
                         </tr>
                         {% endfor %}
                     </tbody>

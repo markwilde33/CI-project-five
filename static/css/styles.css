@@ -146,3 +146,15 @@ a:hover {
 /*.td-color{*/
 /*    color: #044584!important;*/
 /*    }*/
+
+
+.badge-font-size {
+    font-size: 1rem;
+    }
+    
+.cell-color-one{
+    color: #AA71AD;
+    }
+.icon-color-three{
+    color: #8E808E;
+    }
