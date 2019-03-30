@@ -76,7 +76,7 @@
                             <a href="{% url 'edit_ticket' ticket.id %}" class="btn btn-primary btn-sm">&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</a>
                             </td>
                             <td>
-                            <button href="{% url 'delete_ticket' ticket.id %}" class="btn btn-danger btn-sm">Delete</button> 
+                               <form class="button-style " method="GET" action="{% url 'delete_ticket' ticket.id %}"><input class='btn btn-danger btn-sm' type="submit" value="Delete" onclick="return confirm('Are you sure you want to permanently delete this ticket?')"></form>
                             </td>
                             <td>
                                 <form class="button-style " method="GET" action="{% url 'ticket_view' ticket.id %}"><input class='btn btn-info btn-sm' type="submit" value="&nbsp;&nbsp;View&nbsp;&nbsp;"></form>

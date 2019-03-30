@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Ticket, TicketComment
 from .forms import TicketForm, CommentForm
@@ -61,6 +62,8 @@ def create_or_edit_ticket(request, pk=None):
             ticket = ticket_form.save()
             ticket.author = request.user
             ticket.save()
+            messages.success(
+                request, "Your ticket has been edited")
             return redirect(ticket_view, ticket.pk)
     else:
         ticket_form = TicketForm(instance=ticket)
@@ -70,11 +73,13 @@ def create_or_edit_ticket(request, pk=None):
 @login_required() 
 def delete_ticket(request, pk):
     """
-    Delete a bug
+    Delete a ticket
     """
     ticket =  get_object_or_404(Ticket, pk=pk) 
     ticket.delete()
-    return redirect('profile')
+    messages.success(
+        request, "Your ticket has been deleted")
+    return redirect(reverse('profile'))
      
 
 @login_required

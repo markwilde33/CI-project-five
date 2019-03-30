@@ -19,8 +19,12 @@
 
 <body>
     {% include 'includes/_navbar.html' %}
-    {% block page_heading %}{% endblock %}
+    <div>
     {% include 'includes/_messages.html' %}
+    </div>
+    <div>
+    {% block page_heading %}{% endblock %}
+    </div>
     <div>
     {% block content %} {% endblock %}
     </div>

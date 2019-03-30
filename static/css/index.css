@@ -6,6 +6,7 @@ html, body {
   background-size: cover;
   font-family: 'Roboto', sans-serif;
   color: #FDF5EA;
+  line-height: 1.0;
 }
 
 
@@ -38,11 +39,11 @@ html, body {
 
 /*Footer*/
 .pb-3, .py-3 {
-    padding-bottom: 0.5rem!important;
+    padding-bottom: 0.75rem!important;
 }
 
 .pt-3, .py-3 {
-    padding-top: 0.5rem!important;
+    padding-top: 0.75rem!important;
 }
 
 .footer-style{
