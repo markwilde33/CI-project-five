@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% load bootstrap_tags %} {% load staticfiles %} {% block content %}
+{% extends 'base.html' %}
+{% load staticfiles %
+{% block content %}
 <!-- Content -->
 <section class='table-section'>
     <div class='container'>
@@ -13,12 +15,12 @@
                     <thead>
                         <tr>
                             <th class="font-style" scope="col">Title</th>
-                            <th class="d-none d-md-table-cell font-style" scope="col">Author</th>
+                            <th class="d-none d-lg-table-cell font-style" scope="col">Author</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Description</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Views</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Upvotes</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Status</th>
-                            <th class="d-none d-md-table-cell font-style" scope="col">Date&nbsp;Created</th>
+                            <th class="d-none d-lg-table-cell font-style" scope="col">Date&nbsp;Created</th>
                             <th class="font-style" scope="col">Type</th>
                             <th scope="col"></th>
                         </tr>
@@ -29,7 +31,7 @@
                             <td>
                                 <h5>{{ ticket.title}}</h5>
                             </td>
-                            <td class='d-none d-md-table-cell'>
+                            <td class='d-none d-lg-table-cell'>
                                 {{ ticket.author }}
                             </td>
                             <td class='d-none d-md-table-cell'>
@@ -50,7 +52,7 @@
                                 <span class="badge badge-pill badge-success badge-font-size">&nbsp;Done&nbsp;</span>
                                 {% endif %}
                             </td>
-                            <td class='d-none d-md-table-cell'>
+                            <td class='d-none d-lg-table-cell'>
                                 {{ ticket.created_date }} at {{ ticket.created_date.time}}
                             </td>
                             {% if ticket.ticket_type == 'BUG' %}

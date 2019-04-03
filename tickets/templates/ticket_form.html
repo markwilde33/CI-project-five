@@ -1,15 +1,15 @@
-{% extends 'base.html' %}
-{% load bootstrap_tags %}
-
-{% block content %}
-<div class="heading-margin ml-4">
-<h1>{% block page_heading %}Create or Edit a Ticket{% endblock %}</h1>
+{% extends 'base.html' %} {% load staticfiles %} {% load bootstrap_tags %} {% block content %}
+<div class="heading-margin ml-4 mb-5">
+    <h1>{% block page_heading %}Create or Edit a Ticket{% endblock %}</h1>
 </div>
 <form method="POST">
-    {% csrf_token %}
+    {% csrf_token %} {{ ticket_form | as_bootstrap }}
 
-    {{ ticket_form | as_bootstrap }}
-
-    <button class="btn btn-default" type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </form>
+<div class="row">
+    <div class="col-sm-4 mt-5 ml-5 mb-5">
+        <p><small>Changed your mind? <a href="{% url 'get_tickets' %}">Return to tickets page</a></small></p>
+    </div>
+</div>
 {% endblock %}

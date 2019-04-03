@@ -28,8 +28,8 @@
                             <th class="d-none d-md-table-cell font-style" scope="col">Description</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Views</th>
                             <th class="d-none d-md-table-cell font-style" scope="col">Upvotes</th>
-                            <th class="d-none d-md-table-cell font-style" scope="col">Status</th>
-                            <th class="d-none d-md-table-cell font-style" scope="col">Date&nbsp;Created</th>
+                            <th class="d-none d-lg-table-cell font-style" scope="col">Status</th>
+                            <th class="d-none d-lg-table-cell font-style" scope="col">Date&nbsp;Created</th>
                             <th class="d-none d-sm-table-cell font-style" scope="col">Type</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
@@ -51,7 +51,7 @@
                             <td class='d-none d-md-table-cell cell-color-one'>
                                 <i class="fa fa-thumbs-up upvotes icon-color-three"></i> {{ ticket.upvotes }}
                             </td>
-                            <td class='d-none d-md-table-cell'>
+                            <td class='d-none d-lg-table-cell'>
                                 {% if ticket.status == 'TO DO' %}
                                 <span class="badge badge-pill badge-primary badge-font-size">&nbsp;To do&nbsp;</span>
                                 {% elif ticket.status == "DOING" %}
@@ -60,7 +60,7 @@
                                 <span class="badge badge-pill badge-success badge-font-size">&nbsp;Done&nbsp;</span>
                                 {% endif %}
                             </td>
-                            <td class='d-none d-md-table-cell'>
+                            <td class='d-none d-lg-table-cell'>
                                 {{ ticket.created_date}}
                             </td>
                             {% if ticket.ticket_type == 'BUG' %}

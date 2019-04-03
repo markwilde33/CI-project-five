@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Ticket, TicketComment
 from .forms import TicketForm, CommentForm
+from django.conf import settings
 import stripe
 
 
@@ -93,5 +94,36 @@ def upvote_bug(request, pk):
         bug.save()
         return redirect(reverse('ticket_view', kwargs={'pk': pk}))
 
-     
+
+def make_payment(request):
+    """
+    Return the payments.html file
+    """
+    # Auto fill stripe dummy payment details for test mode
+    payment_details = { "stripe_key": settings.STRIPE_PUBLISHABLE }
+    return render(request, "make_payment.html", payment_details)
+
+def checkout(request):
+    """
+    Complete payment transaction using Stripe checkout
+    link: https://stripe.com/docs/checkout
+    """
+    # Gets Stripe secret key needed to make payment
+    stripe.api_key = settings.STRIPE_SECRET
+    
+    if request.method == "POST":
+        token = request.POST.get("stripeToken")
+    try:
+        stripe.Charge.create(
+            amount = '0999',
+            currency = 'eur',
+            source = token,
+        )
+    except stripe.error.CardError:
+                messages.error(request, "Your card was declined")
+    
+    else:
+        messages.success(
+            request, "Payment received, thank you!")
+        return redirect(reverse('get_tickets'))
         
