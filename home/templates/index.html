@@ -11,22 +11,93 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 
 <body>
     {% include 'includes/_navbar.html' %} {% include 'includes/_messages.html' %}
-    <div class="container mt-5">
+    <div class="container mt-5 margin-style">
         <br>
         <br>
-        <div>
-            <h3 class="custom-color">Welcome to Unicorn Issue Tracker.</h3>
-            <p class="custom-color"><strong>This is where the magic happens...</strong></p>
+        <div class="row">
+            <div class="col-sm-12 mt-5 mb-2 text-center">
+                <h1><span class="badge badge-dark custom-heading-style-two">Welcome To</span></h1>
+                <h1><span class="badge badge-dark custom-heading-style-two">Interstellar Issue Tracker</span></h1>
+            </div>
         </div>
-        {% include 'includes/_footer.html' %}
+        
+        <div class="row">
+            <div class="col-sm-5 mt-5 mb-2 text-center">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0 quote-styles">“Not only is the universe stranger than we imagine—it is stranger than we can imagine.”</p>
+                    <footer class="blockquote-footer quote-styles-two"><cite title="Source Title">Arthur Stanley Eddington</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 mt-5 mb-2  text-center">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0 quote-styles">“My feature idea for a virtual rocket launcher has been well received by
+                    the community here, and is now in development! I can't wait to get my hands on the finished product!”</p>
+                    <footer class="blockquote-footer quote-styles-two"><cite title="Source Title">John Rambo</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 mt-5 mb-2  text-center">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0 quote-styles">“I found a bug in the Navbar and Interstellar were all over it! It was fixed within 24hrs, Great job guys.”</p>
+                    <footer class="blockquote-footer quote-styles-two"><cite title="Source Title">Big Jimmy</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <!--<div class="row">-->
+    <!--    <div class=" col-sm-4 mt-3 mb-2">-->
+    <!--        <div class="bg-dark info-styles"><p>Please sign up and help us improve our product.</p>-->
+    <!--        <p>Users can create tickets to identify bugs in our sofware wich we will then fix.</p>-->
+    <!--        <p>If users have some good ideas for extra features they can create a feature ticket.</p>-->
+    <!--        <p>The most popular features will be implemented.</p>-->
+    <!--        <p>Users can make donations of 9.99 towards a feature to help ensure it will be chosen for develelopment ny our Intersteaalr team</p></div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer footer-dark bg-dark text-center py-3 pl-5 pr-5 fixed-bottom ">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 text-center mb-0">
+                    <div>
+                        <i class="fa fa-2x  fas fa-chart-pie icon-color-four"></i>
+                        <h5 class="custom-heading-style">Guide Development</h5>
+                        <p class=" custom-font-style">Sign up and show us what you want by upvoting the tickets you are most interested in. Our team focuses on the most-upvoted tickets.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 text-center mb-0 d-none d-sm-none d-md-block">
+                    <div>
+                        <i class="fa fa-2x fas fa-keyboard icon-color-four"></i>
+                        <h5 class="custom-heading-style">Make Us Better</h5>
+                        <p class="custom-font-style">We take pleasure in your leisure. Found a bug? Have an idea for a new feature? Create a ticket so that our users can support you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 text-center mb-0 d-none d-sm-none d-md-block">
+                    <div>
+                        <i class="fa fa-2x fas fa-bullhorn icon-color-four"></i>
+                        <h5 class="custom-heading-style">Stay Up-To-Date</h5>
+                        <p class="custom-font-style">We update changes in ticket status daily. Our customer always know what we are currently working on.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+
+
 </body>
 
 </html>

@@ -94,7 +94,7 @@ def upvote_bug(request, pk):
         bug.save()
         return redirect(reverse('ticket_view', kwargs={'pk': pk}))
 
-
+@login_required
 def make_payment(request):
     """
     Return the payments.html file
@@ -102,7 +102,9 @@ def make_payment(request):
     # Auto fill stripe dummy payment details for test mode
     payment_details = { "stripe_key": settings.STRIPE_PUBLISHABLE }
     return render(request, "make_payment.html", payment_details)
-
+    
+    
+@login_required
 def checkout(request):
     """
     Complete payment transaction using Stripe checkout
@@ -125,5 +127,11 @@ def checkout(request):
     else:
         messages.success(
             request, "Payment received, thank you!")
+            
+            
         return redirect(reverse('get_tickets'))
+
+
         
+
+  

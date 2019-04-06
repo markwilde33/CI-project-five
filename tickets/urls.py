@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^upvote(?P<pk>\d+)/$', upvote_bug, name='upvote_bug'),
     url(r'^payment/$', make_payment, name='make_payment'),
     url(r'^checkout/$', checkout, name='checkout'),
+   
     ]
     
        

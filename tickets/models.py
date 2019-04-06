@@ -16,7 +16,7 @@ class Ticket(models.Model):
         ('FEATURE', 'Feature')
     )
 
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, null=True,)
     title = models.CharField(max_length=255)
     description = models.TextField()
     ticket_type = models.CharField(max_length=20, choices=TICKET_CHOICES)

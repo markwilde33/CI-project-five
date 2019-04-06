@@ -1,17 +1,19 @@
-html, body { 
-  background: url(../img/alien.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: 'Roboto', sans-serif;
-  color: #FDF5EA;
-  line-height: 1.0;
+html,
+body {
+    background: url(../img/alien.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #FDF5EA;
+    line-height: 1.0;
 }
 
 
 /*Navbar*/
-.navbar-dark .navbar-brand  {
+
+.navbar-dark .navbar-brand {
     color: #8FBDAE;
 }
 
@@ -21,32 +23,39 @@ html, body {
 }
 
 .navbar {
-    margin-bottom: 6rem; 
-    }
+    margin-bottom: 6rem;
+}
 
 .navbar-brand {
     font-size: 22px;
-    
+
 }
 
-.navbar .navbar-nav li a:hover{
-    color: #8FBDAE!important;}
+.navbar .navbar-nav li a:hover {
+    color: #8FBDAE!important;
+}
 
 /*Forms*/
+
 .accountform {
     padding-top: 20px;
 }
 
 /*Footer*/
-.pb-3, .py-3 {
-    padding-bottom: 0.75rem!important;
+
+.pb-3,
+.py-3 {
+    padding-bottom: 0rem!important;
 }
 
-.pt-3, .py-3 {
-    padding-top: 0.75rem!important;
+.pt-3,
+.py-3 {
+    padding-top: 0.50rem!important;
 }
 
-.footer-style{
+
+
+.footer-style {
     color: #8FBDAE;
 }
 
@@ -58,33 +67,74 @@ a {
 
 a:hover {
     color: #B9C2CA;
-    }
+}
 
 /*Table form tickets page*/
+
 form {
-     width: 40%; 
-     padding-top: 0px!important; 
-     padding-left: 0px!important; 
+    width: 40%;
+    padding-top: 0px!important;
+    padding-left: 0px!important;
 }
 
-.table td, .table th {
+.table td,
+.table th {
     padding: .75rem;
     vertical-align: top;
-     border-top: none; 
+    border-top: none;
 }
 
 
-/*text color for index page*/
-.custom-color {
-    color: #FDF5EA;
+/*headings & font stlyes for index page*/
+
+.custom-heading-style {
+    color: #B9C2CA;
+
+}
+.custom-heading-style-two {
+    color: #8FBDAE!important;
+
+}
+.custom-font-style {
+    font-size: 15px;
+    color: #767E98;
+}
+
+/*Custom icon colors*/
+
+.icon-color-one {
+    color: #F4A4B2;
+}
+
+.icon-color-two {
+    color: #EEE8AF;
+}
+
+
+.icon-color-three {
+    color: #8E808E;
+}
+
+.icon-color-four {
+    color: #8FBDAE;
+}
+
+
+.info-styles{
+    border-radius: 25px;
+    padding: 10px;
     }
     
+.quote-styles{
+    color: #16054C;
     
-/*Custom icon colors*/
- .icon-color-one{
-     color: #F4A4B2;
-     }
- .icon-color-two{
-    color: #EEE8AF;
-     }
-     
+   
+    }
+    
+.quote-styles-two{
+     color: #767E98;
+    }
+    
+    .margin-style{
+        margin-bottom: 300px;
+        }

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% load staticfiles %} {% load bootstrap_tags %} {% block content %}
 <div class="heading-margin ml-4 mb-5">
-    <h1>{% block page_heading %}Create or Edit a Ticket{% endblock %}</h1>
+    <h2>{% block page_heading %}Create or Edit a Ticket{% endblock %}</h2>
 </div>
 <form method="POST">
     {% csrf_token %} {{ ticket_form | as_bootstrap }}
