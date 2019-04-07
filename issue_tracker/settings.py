@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-# import env
 import dj_database_url
+
+if os.path.exists('env.py'):
+    import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -144,9 +146,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-STATIC_ROOT = (
-    os.path.join(BASE_DIR, "staticfiles"),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles"),
+
+
+
 
 # STRIPE KEYS
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
