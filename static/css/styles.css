@@ -129,7 +129,7 @@ a:hover {
       
 
 .icon-color-three{
-    color: #8E808E;
+    color: #8FBDAE;
     }   
   /*Custom heading margin*/   
 .heading-margin {
@@ -153,9 +153,9 @@ a:hover {
 /*.td-color{*/
 /*    color: #044584!important;*/
 /*    }*/
-.cell-color-one{
-    color: #AA71AD;
-    }
+.cell-color-one {
+    color: #BD9162;
+}
 
 .badge-font-size {
     font-size: 1rem;
