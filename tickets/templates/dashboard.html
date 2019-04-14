@@ -1,0 +1,503 @@
+{% extends 'base.html' %} {% load staticfiles %} {% load bootstrap_tags %} {% block content %}
+
+<div class="container-fluid mt-5 mb-5 ">
+  <div class="row custom-margin">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="mt-5">
+        <canvas id="one" max-width="400" max-height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="mt-5">
+        <canvas id="two" max-width="400" max-height="400"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row custom-margin">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class=" mb-5">
+        <canvas id="three" min-width="800" min-height="1000"></canvas>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class=" mb-5">
+        <canvas id="four" min-width="800" min-height="1000"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row custom-margin">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="mb-5">
+        <canvas id="five" max-width="400" max-height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="mb-5">
+        <canvas id="six" max-width="400" max-height="400"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let one = document.getElementById('one').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#B9C2CA';
+
+  let pieChartOne = new Chart(one, {
+    type: 'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+    data: {
+      labels: ['TICKETS', 'USERS'],
+      datasets: [{
+        label: 'TICKETS',
+        data: [
+          12,
+          50,
+          0
+        ],
+        backgroundColor: [
+          '#767E98',
+          '#8FBDAE',
+        ],
+        borderWidth: 3,
+        borderColor: '#B9C2CA',
+        hoverBorderWidth: 3,
+        hoverBorderColor: '#000000'
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          display: false,
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }]
+      },
+      title: {
+        display: false,
+      },
+      legend: {
+        display: true,
+        position: 'right',
+        labels: {
+          fontColor: '#B9C2CA'
+        }
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          bottom: 0,
+          top: 0
+        }
+      },
+      tooltips: {
+        enabled: true,
+        titleFontSize: 14,
+        bodyFontSize: 14
+      }
+    }
+  });
+
+  let two = document.getElementById('two').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#B9C2CA';
+
+  let pieChartTwo = new Chart(two, {
+    type: 'pie',
+    data: {
+      labels: ['BUGS', 'FEATURES'],
+      datasets: [{
+        label: 'TICKETS',
+        data: [
+          7,
+          5,
+          0
+        ],
+        backgroundColor: [
+          '#767E98',
+          '#8FBDAE',
+        ],
+        borderWidth: 3,
+        borderColor: '#B9C2CA',
+        hoverBorderWidth: 3,
+        hoverBorderColor: '#000000'
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          display: false,
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }]
+      },
+      title: {
+        display: false,
+      },
+      legend: {
+        display: true,
+        position: 'right',
+        labels: {
+          fontColor: '#B9C2CA'
+        }
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          bottom: 0,
+          top: 0
+        }
+      },
+      tooltips: {
+        enabled: true,
+        titleFontSize: 14,
+        bodyFontSize: 14
+      }
+    }
+  });
+
+  let three = document.getElementById('three').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#B9C2CA';
+
+  let barChartOne = new Chart(three, {
+    type: 'bar',
+    data: {
+      labels: ['TO DO', 'DOING', 'DONE'],
+      datasets: [{
+        label: 'STATUS',
+        data: [
+          5,
+          3,
+          4,
+          0
+        ],
+        backgroundColor: [
+          '#8FBDAE',
+          '#767E98',
+          '#AEC9FC'
+          
+        ],
+        borderWidth: 3,
+        borderColor: '#B9C2CA',
+        hoverBorderWidth: 3,
+        hoverBorderColor: '#000000'
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          display: true,
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }]
+      },
+      title: {
+        fontColor: '#B9C2CA',
+        display: true,
+        position: 'top',
+        text: 'TICKET STATUS',
+        fontSize: 22,
+      },
+      legend: {
+        display: false,
+        position: 'right',
+        labels: {
+          fontColor: '#B9C2CA'
+        }
+      },
+      layout: {
+        padding: {
+          left: 10,
+          right: 0,
+          bottom: 0,
+          top: 0
+        }
+      },
+      tooltips: {
+        enabled: true,
+        titleFontSize: 14,
+        bodyFontSize: 14
+      }
+    }
+  });
+
+  let four = document.getElementById('four').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#B9C2CA';
+
+  let barChartTwo = new Chart(four, {
+    type: 'bar',
+    data: {
+      labels: ['BUGS', 'FEATURES', 'TOTAL'],
+      datasets: [{
+        label: 'UPVOTES',
+        data: [
+          120,
+          122,
+          242,
+          0
+        ],
+        backgroundColor: [
+          '#8FBDAE',
+          '#767E98',
+          '#AEC9FC'
+        ],
+        borderWidth: 3,
+        borderColor: '#B9C2CA',
+        hoverBorderWidth: 3,
+        hoverBorderColor: '#000000'
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          display: true,
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }],
+        yAxes: [{
+          display: true,
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }]
+      },
+      title: {
+        fontColor: '#B9C2CA',
+        display: true,
+        position: 'top',
+        text: 'TICKET UPVOTES',
+        fontSize: 22,
+      },
+      legend: {
+        display: false,
+        position: 'right',
+        labels: {
+          fontColor: '#B9C2CA'
+        }
+      },
+      layout: {
+        padding: {
+          left: 10,
+          right: 0,
+          bottom: 0,
+          top: 0
+        }
+      },
+      tooltips: {
+        enabled: true,
+        titleFontSize: 14,
+        bodyFontSize: 14
+      }
+    }
+  });
+
+  let five = document.getElementById('five').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#B9C2CA';
+
+  let horizontalBarChartOne = new Chart(five, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['ROCKET LAUNCHER', 'GAMING PAGE', 'BLOG'],
+      datasets: [{
+          label: 'VIEWS',
+          data: [
+            50,
+            44,
+            31,
+            0,
+          ],
+          backgroundColor: [
+            '#8FBDAE',
+            '#8FBDAE',
+            '#8FBDAE'
+          ],
+          borderWidth: 2,
+          borderColor: '#B9C2CA',
+          hoverBorderWidth: 1,
+          hoverBorderColor: '#000000'
+        },
+        {
+          label: 'UPVOTES',
+          data: [
+            50,
+            38,
+            16,
+            0
+          ],
+          backgroundColor: [
+            '#AEC9FC',
+            '#AEC9FC',
+            '#AEC9FC'
+          ],
+          borderWidth: 2,
+          borderColor: '#B9C2CA',
+          hoverBorderWidth: 1,
+          hoverBorderColor: '#000000'
+        },
+      ]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          ticks: {
+            reverse: true,
+            fontColor: '#B9C2CA'
+          },
+        }],
+        yAxes: [{
+          position: 'right',
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }]
+      },
+      axisY: {
+        reversed: true
+      },
+      title: {
+        fontColor: '#B9C2CA',
+        display: true,
+        position: 'top',
+        text: 'TRENDING FEATURES',
+        fontSize: 22,
+      },
+      legend: {
+        display: false,
+        position: 'top',
+        labels: {
+          fontColor: '#B9C2CA'
+        }
+      },
+      layout: {
+        padding: {
+          left: 10,
+          right: 0,
+          bottom: 0,
+          top: 0
+        }
+      },
+      tooltips: {
+        enabled: true,
+        titleFontSize: 14,
+        bodyFontSize: 14
+      }
+    }
+  });
+
+  let six = document.getElementById('six').getContext('2d');
+  // Global Options
+  Chart.defaults.global.defaultFontFamily = 'Roboto';
+  Chart.defaults.global.defaultFontSize = 18;
+  Chart.defaults.global.defaultFontColor = '#B9C2CA';
+
+  let horizontalBarChartTwo = new Chart(six, {
+    type: 'horizontalBar',
+    data: {
+      labels: ['FLY IN SOFWARE', "KILL 'EM ALL", 'MAJOR BUG'],
+      datasets: [{
+          label: 'VIEWS',
+          data: [
+            45,
+            33,
+            32,
+            0,
+          ],
+          backgroundColor: [
+            '#8FBDAE',
+            '#8FBDAE',
+            '#8FBDAE'
+          ],
+          borderWidth: 2,
+          borderColor: '#B9C2CA',
+          hoverBorderWidth: 1,
+          hoverBorderColor: '#000000'
+        },
+        {
+          label: 'UPVOTES',
+          data: [
+            35,
+            23,
+            20,
+            0
+          ],
+          backgroundColor: [
+            '#AEC9FC',
+            '#AEC9FC',
+            '#AEC9FC'
+          ],
+          borderWidth: 2,
+          borderColor: '#B9C2CA',
+          hoverBorderWidth: 1,
+          hoverBorderColor: '#000000'
+        },
+      ]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }],
+        yAxes: [{
+          ticks: {
+            fontColor: '#B9C2CA'
+          },
+        }]
+      },
+      title: {
+        fontColor: '#B9C2CA',
+        display: true,
+        position: 'top',
+        text: 'TRENDING BUGS',
+        fontSize: 22,
+      },
+      legend: {
+        display: false,
+        position: 'top',
+        labels: {
+          fontColor: '#B9C2CA'
+        }
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          bottom: 0,
+          top: 0
+        }
+      },
+      tooltips: {
+        enabled: true,
+        titleFontSize: 14,
+        bodyFontSize: 14
+      }
+    }
+  });
+</script>
+{% endblock %}

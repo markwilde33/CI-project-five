@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load staticfiles %
+{% load staticfiles %}
 {% block content %}
 <!-- Content -->
 <section class='table-section'>
@@ -53,7 +53,7 @@
                                 {% endif %}
                             </td>
                             <td class='d-none d-lg-table-cell'>
-                                {{ ticket.created_date }} at {{ ticket.created_date.time}}
+                            {{ ticket.created_date.date }} at {{ ticket.created_date.time}}
                             </td>
                             {% if ticket.ticket_type == 'BUG' %}
                             <td>

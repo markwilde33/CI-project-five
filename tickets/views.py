@@ -132,6 +132,5 @@ def checkout(request):
         return redirect(reverse('get_tickets'))
 
 
-        
-
-  
+def dashboard(request):
+    return render(request, 'dashboard.html')
