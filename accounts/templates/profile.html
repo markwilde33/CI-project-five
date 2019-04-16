@@ -88,6 +88,26 @@
                 </table>
             </div>
         </div>
+        <div>
+         {% if tickets.has_other_pages %}
+            <ul class="pagination">
+                {% if tickets.has_previous %}
+                <li><a href="?page={{ tickets.previous_page_number }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                {% else %}
+                <li class="disabled"><span><i class="fa fa-angle-double-left" aria-hidden="true"></i></span></li>
+                {% endif %} {% for num in tickets.paginator.page_range %} {% if tickets.number == num %}
+                <li class="active"><span>{{ num }}</span>
+                </li>
+                {% else %}
+                <li><a href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %} {% endfor %} {% if tickets.has_next %}
+                <li><a href="?page={{ tickets.next_page_number }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                {% else %}
+                <li class="disabled"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></li>
+                {% endif %}
+            </ul>
+             {% endif %} 
+        </div>
     </div>
 </section>
 {% endblock %}

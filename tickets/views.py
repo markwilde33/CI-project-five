@@ -6,7 +6,9 @@ from django.contrib.auth.models import User
 from .models import Ticket, TicketComment
 from .forms import TicketForm, CommentForm
 from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import stripe
+
 
 
 @login_required()
@@ -14,10 +16,24 @@ def get_tickets(request):
     """
     Create a view that will return a
     list of tickets that were published prior to'now'
-    and render them to the 'tickets.html' template
+    and render them to the 'tickets.html' template,
+    Use Paginator to return 5 tickets per page
     """
-    tickets = Ticket.objects.filter(most_recent_update__lte=timezone.now()
+    get_tickets = Ticket.objects.filter(most_recent_update__lte=timezone.now()
                                 ).order_by('-most_recent_update')
+                                
+    # Paginate tickets, show five per page
+    paginator = Paginator(get_tickets, 5)
+    page = request.GET.get('page', 1)
+    
+    # Handle out of range and invalid page numbers:
+    try:
+        tickets = paginator.page(page)
+    except PageNotAnInteger:
+        tickets = paginator.page(1)
+    except EmptyPage:
+        tickets = paginator.page(paginator.num_pages)
+
     return render(request, "tickets.html", {'tickets': tickets})
 
 

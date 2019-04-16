@@ -6,6 +6,7 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from tickets.models import Ticket
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
@@ -73,7 +74,23 @@ def register(request):
 
 @login_required
 def profile(request):
-    """A view that displays the profile page of a logged in user"""
+    """
+    A view that displays the profile page of a logged in user,
+    Use Paginator to return 5 tickets per page
+    """
    
-    tickets = Ticket.objects.filter(author=request.user)
+    user_tickets = Ticket.objects.filter(author=request.user)
+    
+    # Paginate tickets, show five per page
+    paginator = Paginator(user_tickets, 5)
+    page = request.GET.get('page', 1)
+    
+    # Handle out of range and invalid page numbers:
+    try:
+        tickets = paginator.page(page)
+    except PageNotAnInteger:
+        tickets = paginator.page(1)
+    except EmptyPage:
+        tickets = paginator.page(paginator.num_pages)
+        
     return render(request, 'profile.html', { 'tickets':tickets})

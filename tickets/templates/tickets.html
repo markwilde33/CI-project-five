@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-{% block content %}
+{% extends 'base.html' %} {% load staticfiles %} {% block content %}
 <!-- Content -->
 <section class='table-section'>
     <div class='container'>
@@ -45,15 +43,12 @@
                             </td>
                             <td class='d-none d-md-table-cell'>
                                 {% if ticket.status == 'TO DO' %}
-                                <span class="badge badge-pill badge-primary badge-font-size">&nbsp;To do&nbsp;</span>
-                                {% elif ticket.status == "DOING" %}
-                                <span class="badge badge-pill badge-warning badge-font-size">&nbsp;Doing&nbsp;</span>
-                                {% else %}
-                                <span class="badge badge-pill badge-success badge-font-size">&nbsp;Done&nbsp;</span>
-                                {% endif %}
+                                <span class="badge badge-pill badge-primary badge-font-size">&nbsp;To do&nbsp;</span> {% elif ticket.status == "DOING" %}
+                                <span class="badge badge-pill badge-warning badge-font-size">&nbsp;Doing&nbsp;</span> {% else %}
+                                <span class="badge badge-pill badge-success badge-font-size">&nbsp;Done&nbsp;</span> {% endif %}
                             </td>
                             <td class='d-none d-lg-table-cell'>
-                            {{ ticket.created_date.date }} at {{ ticket.created_date.time}}
+                                {{ ticket.created_date.date }} at {{ ticket.created_date.time}}
                             </td>
                             {% if ticket.ticket_type == 'BUG' %}
                             <td>
@@ -72,6 +67,24 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div>
+            <ul class="pagination">
+                {% if tickets.has_previous %}
+                <li><a href="?page={{ tickets.previous_page_number }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                {% else %}
+                <li class="disabled"><span><i class="fa fa-angle-double-left" aria-hidden="true"></i></span></li>
+                {% endif %} {% for num in tickets.paginator.page_range %} {% if tickets.number == num %}
+                <li class="active"><span>{{ num }}</span>
+                </li>
+                {% else %}
+                <li><a href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %} {% endfor %} {% if tickets.has_next %}
+                <li><a href="?page={{ tickets.next_page_number }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                {% else %}
+                <li class="disabled"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span></li>
+                {% endif %}
+            </ul>
         </div>
     </div>
 </section>

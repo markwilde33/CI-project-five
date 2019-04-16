@@ -10,6 +10,7 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.0;
 }
+
 html,
 body,
 .table {
@@ -17,7 +18,8 @@ body,
 }
 
 /*Navbar*/
-.navbar-dark .navbar-brand  {
+
+.navbar-dark .navbar-brand {
     color: #8FBDAE;
 }
 
@@ -33,10 +35,11 @@ body,
 
 .navbar-brand {
     font-size: 22px;
-}    
+}
 
-.navbar .navbar-nav li a:hover{
-    color: #8FBDAE!important;}
+.navbar .navbar-nav li a:hover {
+    color: #8FBDAE!important;
+}
 
 
 
@@ -67,7 +70,7 @@ form {
     padding-top: 0.75rem!important;
 }
 
-.footer-style{
+.footer-style {
     color: #8FBDAE;
 }
 
@@ -79,93 +82,123 @@ a {
 
 a:hover {
     color: #B9C2CA;
-    }
+}
 
 
 /*Table form tickets page*/
+
 .button-style {
-     width: 40%; 
-     padding-top: 0px!important; 
-     padding-left: 0px!important; 
+    width: 40%;
+    padding-top: 0px!important;
+    padding-left: 0px!important;
 }
 
 .table th {
     padding: .75rem;
     vertical-align: top;
-     border-top: none; 
+    border-top: none;
 }
 
 .font-style {
     font-size: 20px;
     color: #8FBDAE;
-    }
-    
+}
+
 .btn {
-    
+
     border: none;
     border-radius: 300px;
 }
- /*Custom button stylese*/
-.btn-default
-{
-  background-color: #8FBDAE;
-  color:#FFF;
-  border-color: #2F3E48;
+
+/*Custom button stylese*/
+
+.btn-default {
+    background-color: #8FBDAE;
+    color: #FFF;
+    border-color: #2F3E48;
 }
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
 
-  background-color: #270E58;
-  color:#FFF;
-  border-color: #31347B;
- }
- 
- /*Custom icon colors*/
- .icon-color-one{
-     color: #F4A4B2;
-     }
- .icon-color-two{
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+
+    background-color: #270E58;
+    color: #FFF;
+    border-color: #31347B;
+}
+
+/*Custom icon colors*/
+
+.icon-color-one {
+    color: #F4A4B2;
+}
+
+.icon-color-two {
     color: #EEE8AF;
-     }
-      
+}
 
-.icon-color-three{
+
+.icon-color-three {
     color: #8FBDAE;
-    }   
-  /*Custom heading margin*/   
+}
+
+/*Custom heading margin*/
+
 .heading-margin {
     margin-top: 80px;
 }
 
 
- /*ticket table style*/  
+/*ticket table style*/
+
 .table-fade {
-   background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/*miscellaneaous style*/  
+/*miscellaneaous style*/
 
-/*user name in comments section*/  
-.user-style{
+/*user name in comments section*/
+
+.user-style {
     color: #8FBDAE;
-    }
-    
-/*secondary color for  td in table section*/  
+}
+
+/*secondary color for  td in table section*/
+
 /*.td-color{*/
+
 /*    color: #044584!important;*/
+
 /*    }*/
+
 .cell-color-one {
     color: #BD9162;
 }
 
 .badge-font-size {
     font-size: 1rem;
-    }
+}
 
-    
-.custom-margin{
+
+.custom-margin {
     margin-top: 100px;
-    }
-    
+}
+
 a {
     color: #8FBDAE;
-    }
+}
+
+
+.pagination>li>a,
+.pagination>li>span {
+    font-size: 14px;
+    float: right;
+    padding: 3px 6px;
+    border: 2px solid #767E98;
+}
+
+
+
+
