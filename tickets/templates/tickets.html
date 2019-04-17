@@ -1,3 +1,4 @@
+<!-- Load Tags -->
 {% extends 'base.html' %} {% load staticfiles %} {% block content %}
 <!-- Content -->
 <section class='table-section'>
@@ -9,6 +10,7 @@
             {% block page_title %}
             <h1> All Tickets</h1>{% endblock %}
             <div class="table-responsive mt-5 pb-5">
+            <!-- Data Table  -->
                 <table class='table table-striped table-dark table-fade'>
                     <thead>
                         <tr>
@@ -35,10 +37,10 @@
                             <td class='d-none d-md-table-cell'>
                                 {{ ticket.description|truncatewords:6 }}
                             </td>
-                            <td class='d-none d-md-table-cell cell-color-one'>
+                            <td class='d-none d-md-table-cell cell-custom-style'>
                                 <i class="far fa-eye icon-color-three"></i> {{ ticket.views }}
                             </td>
-                            <td class='d-none d-md-table-cell cell-color-one'>
+                            <td class='d-none d-md-table-cell cell-custom-style'>
                                 <i class="fa fa-thumbs-up upvotes icon-color-three"></i> {{ ticket.upvotes }}
                             </td>
                             <td class='d-none d-md-table-cell'>
@@ -68,6 +70,7 @@
                 </table>
             </div>
         </div>
+        <!-- Paginate pages -->
         <div>
             <ul class="pagination">
                 {% if tickets.has_previous %}

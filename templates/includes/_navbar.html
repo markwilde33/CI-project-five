@@ -1,32 +1,35 @@
+<!-- NavBar -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-user-astronaut fa-lg"></i><small> Interstellar Issue Tracker</small></a>
+    <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-user-astronaut fa-lg">
+    </i><small> Interstellar Issue Tracker</small>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><strong>Account</strong></a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user icon-color-two"></i> Profile</a>
-                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt icon-color-one"></i></i> Log Out</a>
-                </div>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'get_tickets' %}">Tickets</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'create_ticket' %}">New Ticket</a>
             </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><strong>Account</strong></a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user icon-color-two"></i> Profile</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt icon-color-one"></i> Log Out</a>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
             </li>
             {% if user.username == "admin" %}
+            <!-- Admin access to the database -->
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'admin:index' %}">
-                    <span class="glyphicon glyphicon-th-large"></span>Admin</a>
+                <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
             </li>
             {% endif %} {% else %}
             <li class="nav-item">
@@ -38,6 +41,4 @@
             {% endif %}
         </ul>
     </div>
-    </div>
 </nav>
- 

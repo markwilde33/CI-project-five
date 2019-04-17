@@ -1,3 +1,5 @@
+/*----------------------------------------------Global Styles Styles*/
+
 html,
 body {
     background: url(../img/alien.jpg) no-repeat center center fixed;
@@ -11,7 +13,7 @@ body {
 }
 
 
-/*Navbar*/
+/*-----------------------------------------------------Navbar Styles*/
 
 .navbar-dark .navbar-brand {
     color: #8FBDAE;
@@ -28,20 +30,14 @@ body {
 
 .navbar-brand {
     font-size: 22px;
-
 }
 
 .navbar .navbar-nav li a:hover {
     color: #8FBDAE!important;
 }
 
-/*Forms*/
 
-.accountform {
-    padding-top: 20px;
-}
-
-/*Footer*/
+/*-----------------------------------------------------Footer Styles*/
 
 .pb-3,
 .py-3 {
@@ -53,11 +49,12 @@ body {
     padding-top: 0.50rem!important;
 }
 
-
-
 .footer-style {
     color: #8FBDAE;
 }
+
+
+/*-------------------------------------------------------Link Styles*/
 
 a {
     color: #007bff;
@@ -69,7 +66,7 @@ a:hover {
     color: #B9C2CA;
 }
 
-/*Table form tickets page*/
+/*------------------------------------------------------Table Styles*/
 
 form {
     width: 40%;
@@ -85,7 +82,7 @@ form {
 }
 
 
-/*headings & font stlyes for index page*/
+/*--------------------------------------------Headings & Font Styles*/
 
 .custom-heading-style {
     color: #B9C2CA;
@@ -100,7 +97,8 @@ form {
     color: #767E98;
 }
 
-/*Custom icon colors*/
+
+/*-------------------------------------------------------Icon Styles*/
 
 .icon-color-one {
     color: #F4A4B2;
@@ -109,7 +107,6 @@ form {
 .icon-color-two {
     color: #EEE8AF;
 }
-
 
 .icon-color-three {
     color: #8E808E;
@@ -120,21 +117,31 @@ form {
 }
 
 
+/*----------------------------------------------Miscellaneous Styles*/
+
 .info-styles{
     border-radius: 25px;
     padding: 10px;
     }
-    
+   
 .quote-styles{
     color: #16054C;
-    
-   
     }
     
 .quote-styles-two{
      color: #767E98;
     }
     
-    .margin-style{
-        margin-bottom: 300px;
-        }
+.margin-style{
+    margin-bottom: 300px;
+    }
+        
+.accountform {
+    padding-top: 20px;
+}
+
+.blockquote {
+    background-color: #F5F6F3;
+    border-radius: 25px;
+    padding: 5px;
+    }

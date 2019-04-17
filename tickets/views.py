@@ -22,7 +22,7 @@ def get_tickets(request):
     get_tickets = Ticket.objects.filter(most_recent_update__lte=timezone.now()
                                 ).order_by('-most_recent_update')
                                 
-    # Paginate tickets, show five per page
+    # Pagination
     paginator = Paginator(get_tickets, 5)
     page = request.GET.get('page', 1)
     
@@ -80,7 +80,7 @@ def create_or_edit_ticket(request, pk=None):
             ticket.author = request.user
             ticket.save()
             messages.success(
-                request, "Your ticket has been edited")
+                request, "Your ticket has been updated")
             return redirect(ticket_view, ticket.pk)
     else:
         ticket_form = TicketForm(instance=ticket)

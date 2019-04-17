@@ -1,7 +1,6 @@
-{% extends 'base.html' %} 
-{% load staticfiles %}
-{% load bootstrap_tags %} 
-{% block content %}
+<!-- Load Tags -->
+{% extends 'base.html' %} {% load staticfiles %}{% load bootstrap_tags %} {% block content %}
+<!-- Content -->
 <div class="container-fluid ml-5 mt-5">
     <div class="row custom-margin">
         <div class=" col-sm-6 ">
@@ -24,7 +23,7 @@
     <div class="row">
         <div class="col-sm-6 mt-3 mb-2">
             <h2><span class="badge badge-dark">Ticket #{{ticket.id}}</span></h2>
-                <h4>{{ticket.title}}</h4>
+            <h4>{{ticket.title}}</h4>
         </div>
         <div class=" col-sm-4 mt-3 mb-2">
             <h2><span class="badge badge-dark">Description</span></h2>
@@ -37,8 +36,7 @@
                 <button class="btn btn-warning text-light" type="submit">Upvote</button>
             </form>
             {% else %}
-            <a class="btn btn-warning text-light" href="{% url 'make_payment' %}">Donate</a>
-            {% endif %}
+            <a class="btn btn-warning text-light" href="{% url 'make_payment' %}">Donate</a> {% endif %}
         </div>
     </div>
     <h2><span class="badge badge-dark">Comments</span></h2>

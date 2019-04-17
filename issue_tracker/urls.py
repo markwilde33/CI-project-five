@@ -22,6 +22,7 @@ from tickets import urls as urls_tickets
 from home import urls as urls_home
 from django.views import static
 
+#URL patterns for issue_tracker app functionality
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),

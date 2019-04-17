@@ -2,9 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-# The ticket model 
+
 class Ticket(models.Model):
-   
+    """
+    The model for a ticket
+    """
     STATUS_CHOICES = (
         ('TO DO', 'To Do'),
         ('DOING', 'Doing'),
@@ -31,9 +33,10 @@ class Ticket(models.Model):
     def __str__(self):
         return self.title
 
-# The comment model
 class TicketComment(models.Model):
-    
+    """
+    The model for a comment
+    """
     comment = models.TextField()
     ticket = models.ForeignKey(Ticket)
     user = models.ForeignKey(User)

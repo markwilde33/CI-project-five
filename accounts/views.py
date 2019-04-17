@@ -81,7 +81,7 @@ def profile(request):
    
     user_tickets = Ticket.objects.filter(author=request.user)
     
-    # Paginate tickets, show five per page
+    # Pagination
     paginator = Paginator(user_tickets, 5)
     page = request.GET.get('page', 1)
     

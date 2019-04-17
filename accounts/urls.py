@@ -2,6 +2,7 @@ from django.conf.urls import url, include
 from . import urls_reset
 from .views import index, register, profile, logout, login
 
+#URL patterns for accounts app functionality
 urlpatterns = [
     url(r'^register/$', register, name='register'),
     url(r'^profile/$', profile, name='profile'),

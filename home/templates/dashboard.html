@@ -1,53 +1,64 @@
-{% extends 'base.html' %} {% load staticfiles %} {% load bootstrap_tags %} {% block content %}
-
+<!-- Load Tags -->
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap_tags %}
+{% block content %}
+<!-- Content -->
+<div class="heading-margin ml-5 mb-5 text-center">
+    <h2>Ticket Data Visualization</h2>
+</div>
 <div class="container-fluid mt-5 mb-5 ">
   <div class="row custom-margin">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="mt-5">
-        <canvas id="one" max-width="400" max-height="400"></canvas>
+        <canvas id="onePie"></canvas>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="mt-5">
-        <canvas id="two" max-width="400" max-height="400"></canvas>
+        <canvas id="twoPie"></canvas>
       </div>
     </div>
   </div>
   <div class="row custom-margin">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class=" mb-5">
-        <canvas id="three" min-width="800" min-height="1000"></canvas>
+        <canvas id="oneBar"></canvas>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class=" mb-5">
-        <canvas id="four" min-width="800" min-height="1000"></canvas>
+        <canvas id="twoBar"></canvas>
       </div>
     </div>
   </div>
   <div class="row custom-margin">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="mb-5">
-        <canvas id="five" max-width="400" max-height="400"></canvas>
+        <canvas id="oneHorizontalBar"></canvas>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="mb-5">
-        <canvas id="six" max-width="400" max-height="400"></canvas>
+        <canvas id="twoHorizontalBar"></canvas>
       </div>
     </div>
   </div>
 </div>
 
+<!-- A selection of charts using chart.js -->
 <script>
-  let one = document.getElementById('one').getContext('2d');
+
+  // pieChart showing amount of users and tickets
+  let onePie = document.getElementById('onePie').getContext('2d');
+  
   // Global Options
   Chart.defaults.global.defaultFontFamily = 'Roboto';
   Chart.defaults.global.defaultFontSize = 18;
   Chart.defaults.global.defaultFontColor = '#B9C2CA';
 
-  let pieChartOne = new Chart(one, {
-    type: 'doughnut', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+  let pieChartOne = new Chart(onePie, {
+    type: 'doughnut',
     data: {
       labels: ['TICKETS', 'USERS'],
       datasets: [{
@@ -101,14 +112,16 @@
       }
     }
   });
-
-  let two = document.getElementById('two').getContext('2d');
+  
+  // pieChart showing total amount of bug and feature tickets
+  let twoPie = document.getElementById('twoPie').getContext('2d');
+  
   // Global Options
   Chart.defaults.global.defaultFontFamily = 'Roboto';
   Chart.defaults.global.defaultFontSize = 18;
   Chart.defaults.global.defaultFontColor = '#B9C2CA';
 
-  let pieChartTwo = new Chart(two, {
+  let pieChartTwo = new Chart(twoPie, {
     type: 'doughnut',
     data: {
       labels: ['BUGS', 'FEATURES'],
@@ -163,14 +176,16 @@
       }
     }
   });
-
-  let three = document.getElementById('three').getContext('2d');
+  
+  // barChart showing amount the status of all tickets
+  let oneBar = document.getElementById('oneBar').getContext('2d');
+  
   // Global Options
   Chart.defaults.global.defaultFontFamily = 'Roboto';
   Chart.defaults.global.defaultFontSize = 18;
   Chart.defaults.global.defaultFontColor = '#B9C2CA';
 
-  let barChartOne = new Chart(three, {
+  let barChartOne = new Chart(oneBar, {
     type: 'bar',
     data: {
       labels: ['TO DO', 'DOING', 'DONE'],
@@ -186,7 +201,6 @@
           '#8FBDAE',
           '#767E98',
           '#AEC9FC'
-          
         ],
         borderWidth: 3,
         borderColor: '#B9C2CA',
@@ -214,7 +228,7 @@
         display: true,
         position: 'top',
         text: 'TICKET STATUS',
-        fontSize: 22,
+        fontSize: 25,
       },
       legend: {
         display: false,
@@ -238,14 +252,16 @@
       }
     }
   });
-
-  let four = document.getElementById('four').getContext('2d');
+  
+  // barChart showing the upvotes of bugs and features and total upvotes
+  let twoBar = document.getElementById('twoBar').getContext('2d');
+  
   // Global Options
   Chart.defaults.global.defaultFontFamily = 'Roboto';
   Chart.defaults.global.defaultFontSize = 18;
   Chart.defaults.global.defaultFontColor = '#B9C2CA';
 
-  let barChartTwo = new Chart(four, {
+  let barChartTwo = new Chart(twoBar, {
     type: 'bar',
     data: {
       labels: ['BUGS', 'FEATURES', 'TOTAL'],
@@ -288,7 +304,7 @@
         display: true,
         position: 'top',
         text: 'TICKET UPVOTES',
-        fontSize: 22,
+        fontSize: 25,
       },
       legend: {
         display: false,
@@ -312,14 +328,16 @@
       }
     }
   });
-
-  let five = document.getElementById('five').getContext('2d');
+  
+  // horizontalBarChart showing the views and upvotes of the three most popular features
+  let oneHorizontalBar = document.getElementById('oneHorizontalBar').getContext('2d');
+  
   // Global Options
   Chart.defaults.global.defaultFontFamily = 'Roboto';
   Chart.defaults.global.defaultFontSize = 18;
   Chart.defaults.global.defaultFontColor = '#B9C2CA';
 
-  let horizontalBarChartOne = new Chart(five, {
+  let horizontalBarChartOne = new Chart(oneHorizontalBar, {
     type: 'horizontalBar',
     data: {
       labels: ['ROCKET LAUNCHER', 'GAMING PAGE', 'BLOG'],
@@ -384,7 +402,7 @@
         display: true,
         position: 'top',
         text: 'TRENDING FEATURES',
-        fontSize: 22,
+        fontSize: 25,
       },
       legend: {
         display: false,
@@ -408,14 +426,16 @@
       }
     }
   });
-
-  let six = document.getElementById('six').getContext('2d');
+  
+  // horizontalBarChart showing the views and upvotes of the three most popular bugs
+  let twoHorizontalBar = document.getElementById('twoHorizontalBar').getContext('2d');
+  
   // Global Options
   Chart.defaults.global.defaultFontFamily = 'Roboto';
   Chart.defaults.global.defaultFontSize = 18;
   Chart.defaults.global.defaultFontColor = '#B9C2CA';
 
-  let horizontalBarChartTwo = new Chart(six, {
+  let horizontalBarChartTwo = new Chart(twoHorizontalBar, {
     type: 'horizontalBar',
     data: {
       labels: ['FLY IN SOFWARE', "KILL 'EM ALL", 'MAJOR BUG'],
@@ -475,7 +495,7 @@
         display: true,
         position: 'top',
         text: 'TRENDING BUGS',
-        fontSize: 22,
+        fontSize: 25,
       },
       legend: {
         display: false,
@@ -499,5 +519,6 @@
       }
     }
   });
+  
 </script>
 {% endblock %}

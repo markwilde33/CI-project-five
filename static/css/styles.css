@@ -11,13 +11,8 @@ body {
     line-height: 1.0;
 }
 
-html,
-body,
-.table {
-    color: #FDF5EA;
-}
 
-/*Navbar*/
+/*--------------------------------------------Navbar Styles*/
 
 .navbar-dark .navbar-brand {
     color: #8FBDAE;
@@ -26,7 +21,6 @@ body,
 .navbar-dark .navbar-nav .nav-link {
     font-size: 18px;
     color: #B9C2CA;
-
 }
 
 .navbar {
@@ -42,23 +36,7 @@ body,
 }
 
 
-
-/*Forms*/
-
-/*.accountform {*/
-
-/*    padding-top: 100px;*/
-
-/*}*/
-
-form {
-    width: 45%;
-    padding-top: 80px;
-    padding-left: 30px;
-}
-
-
-/*Footer*/
+/*--------------------------------------------Footer Styles*/
 
 .pb-3,
 .py-3 {
@@ -74,6 +52,9 @@ form {
     color: #8FBDAE;
 }
 
+
+/*-------------------------------------------------------Link Styles*/
+
 a {
     color: #007bff;
     text-decoration: none;
@@ -85,7 +66,13 @@ a:hover {
 }
 
 
-/*Table form tickets page*/
+/*--------------------------------------------Table Styles*/
+
+html,
+body,
+.table {
+    color: #FDF5EA;
+}
 
 .button-style {
     width: 40%;
@@ -104,13 +91,17 @@ a:hover {
     color: #8FBDAE;
 }
 
-.btn {
+.table-fade {
+    background: rgba(255, 255, 255, 0.1);
+}
 
+
+/*--------------------------------------------Custom Button Styles*/
+
+.btn {
     border: none;
     border-radius: 300px;
 }
-
-/*Custom button stylese*/
 
 .btn-default {
     background-color: #8FBDAE;
@@ -123,13 +114,13 @@ a:hover {
 .btn-default:active,
 .btn-default.active,
 .open .dropdown-toggle.btn-default {
-
     background-color: #270E58;
     color: #FFF;
     border-color: #31347B;
 }
 
-/*Custom icon colors*/
+
+/*-------------------------------------------------------Icon Styles*/
 
 .icon-color-one {
     color: #F4A4B2;
@@ -139,48 +130,30 @@ a:hover {
     color: #EEE8AF;
 }
 
-
 .icon-color-three {
-    color: #8FBDAE;
+    color:  #B5CAD5;
 }
 
-/*Custom heading margin*/
+
+/*----------------------------------------------Miscellaneous Styles*/
 
 .heading-margin {
     margin-top: 80px;
 }
 
-
-/*ticket table style*/
-
-.table-fade {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/*miscellaneaous style*/
-
-/*user name in comments section*/
-
 .user-style {
     color: #8FBDAE;
 }
 
-/*secondary color for  td in table section*/
-
-/*.td-color{*/
-
-/*    color: #044584!important;*/
-
-/*    }*/
-
-.cell-color-one {
-    color: #BD9162;
+.cell-custom-style {
+    color: #7A3B45;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .badge-font-size {
     font-size: 1rem;
 }
-
 
 .custom-margin {
     margin-top: 100px;
@@ -190,6 +163,14 @@ a {
     color: #8FBDAE;
 }
 
+form {
+    width: 45%;
+    padding-top: 80px;
+    padding-left: 30px;
+}
+
+
+/*----------------------------------------------Pagination Styles*/
 
 .pagination>li>a,
 .pagination>li>span {
@@ -198,7 +179,6 @@ a {
     padding: 3px 6px;
     border: 2px solid #767E98;
 }
-
 
 
 

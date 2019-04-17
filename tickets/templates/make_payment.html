@@ -1,16 +1,15 @@
+<!-- Load Tags -->
 {% extends 'base.html' %} {% load staticfiles %} {% block content %}
-
-
+<!-- Content -->
 <div class="container-fluid mt-5 ml-2">
     <br>
     <br>
-
     <div class="row">
         <div class="col-12">
             <h3 class="custom-color">Thank you for making a donation</h3>
             <p class="custom-color mt-3"><strong>You are making a donation of €9.99 to upvote a new feature request ticket.</strong></p>
             <form action="{% url 'checkout' %}" method="POST">
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ stripe_key }}" data-amount='0999' , data-currency='eur' , data-description='Make a development contribution' , data-name='Interstellar Issue Tracker' , data-image='https://stripe.com/img/documentation/checkout/marketplace.png'>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ stripe_key }}" data-amount='0999' data-currency='eur' data-description='Make a development contribution' data-name='Interstellar Issue Tracker' data-image='https://stripe.com/img/documentation/checkout/marketplace.png'>
                 </script>
                 {% csrf_token %}
             </form>

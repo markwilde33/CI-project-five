@@ -6,4 +6,5 @@ def index(request):
     return render(request, "index.html")
     
 def dashboard(request):
+    """A view that displays the dashboard page"""
     return render(request, 'dashboard.html')
