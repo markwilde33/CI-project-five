@@ -17,7 +17,6 @@
             <br>
             <div class="table-responsive mt-5 pb-5">
                 <table class='table table-striped table-dark table-fade'>
-                {% if ticket %}
                     <thead>
                         <tr>
                             <th class="font-style" scope="col">Title</th>
@@ -32,7 +31,6 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    {% endif %}
                     <tbody>
                      {% for ticket in tickets %}
                         <tr>
@@ -42,10 +40,10 @@
                             <td class='d-none d-md-table-cell'>
                                 {{ ticket.description|truncatewords:6}}
                             </td>
-                            <td class='d-none d-md-table-cell cell-color-one'>
+                            <td class='d-none d-md-table-cell cell-custom-style'>
                                 <i class="far fa-eye icon-color-three"></i> {{ ticket.views }}
                             </td>
-                            <td class='d-none d-md-table-cell cell-color-one'>
+                            <td class='d-none d-md-table-cell cell-custom-style'>
                                 <i class="fa fa-thumbs-up upvotes icon-color-three"></i> {{ ticket.upvotes }}
                             </td>
                             <td class='d-none d-lg-table-cell'>
