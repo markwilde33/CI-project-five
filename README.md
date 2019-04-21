@@ -1,6 +1,9 @@
+
 # Interstellar Issue Tracker 
 
+
 ### Code Institute: Full Stack Frameworks Milestone Project
+
 
 <a href="https://interstellar-issue-tracker.herokuapp.com/" target="_blank"> Click here to view website</a>
 
@@ -10,7 +13,9 @@
 
 
 
+
 ## Index
+
 
 
 1. [Project Instructions](#instructions-from-code-institute)
@@ -30,7 +35,9 @@
 
 
 
+
 ## Instructions From Code Institute
+
 
 
 
@@ -54,7 +61,9 @@ Guidelines for project development:
 
 
 
+
 ## Issue Tracker Information
+
 
 
 - This project is a Django driven responsive design web application that allows users to create tickets. 
@@ -66,11 +75,14 @@ Guidelines for project development:
 
 
 
+
 ## UX
 
 
 
+
 ### Design
+
 
 
 - Development of the website adhered to a mobile first approach, it implements a simplistic design with minimal content. 
@@ -89,7 +101,9 @@ Guidelines for project development:
 
 
 
+
 ### User Stories
+
 
 
 Several user stories were considered before development began:
@@ -106,7 +120,9 @@ Several user stories were considered before development began:
 
 
 
+
 ## Existing Features
+
 
 
 
@@ -124,7 +140,10 @@ Several user stories were considered before development began:
 
 
 
+
+
 This project also uses custom Django authentication templates to manage URL paths and provide user authentication functionality including;
+
 
 * **Password Reset Form** - A form allowing users to enter an email and receive a link to reset their password
 * **Password Reset Done** - A page that confirms an email has been sent to reset password
@@ -134,7 +153,9 @@ This project also uses custom Django authentication templates to manage URL path
 
 
 
+
 ## Future Technologies
+
 
 
 - The data visualization page is static at present, it would be better if the charts were responsive in real time. This can be implemented in a future update. 
@@ -143,10 +164,13 @@ This project also uses custom Django authentication templates to manage URL path
 
 
 
+
 ## Technologies Used
 
 
+
 ### Integrated Development Environment
+
 
 
 - [Cloud9](https://aws.amazon.com/cloud9/?origin=c9io)
@@ -154,7 +178,9 @@ This project also uses custom Django authentication templates to manage URL path
 
 
 
+
 ### Front end
+
 
 
 - [HTML](https://www.w3schools.com/html/default.asp)
@@ -183,7 +209,9 @@ This project also uses custom Django authentication templates to manage URL path
   
 
 
+
 ### Back end
+
 
 
 - [Python](https://www.python.org/)
@@ -200,7 +228,9 @@ This project also uses custom Django authentication templates to manage URL path
     
 
 
+
 ### Version Control
+
 
 
 - The project uses [Git](https://git-scm.com) as it's version control system.
@@ -209,7 +239,9 @@ This project also uses custom Django authentication templates to manage URL path
 
 
 
+
 ### Hosting Platform
+
 
 
 - [Heroku](https://devcenter.heroku.com/)
@@ -217,11 +249,14 @@ This project also uses custom Django authentication templates to manage URL path
 
 
 
+
 ## Testing
+
 
 
 <details>
       <summary><strong><em>User Story Tests</em></strong></summary>
+
 
 ## User Tests:
 
@@ -237,7 +272,9 @@ This project also uses custom Django authentication templates to manage URL path
 <details>
       <summary><strong><em>Manual Tests</em></strong></summary>
 
+
 ## Manual Tests:
+  
   
 
 #### Index Page:
@@ -325,7 +362,10 @@ This project also uses custom Django authentication templates to manage URL path
       <summary><strong><em>Other</em></strong></summary>
 
 
+
+
 ### Further Testing
+
 
 - Google chrome developer tools where used at every stage of production to
 isolate issues and improve mobile responsiveness.
@@ -335,11 +375,16 @@ isolate issues and improve mobile responsiveness.
 - It is displaying as intended across various devices and in different browsers.
 
 
+
+
 ### Issues
+
 
 - The author is not yet proficient in automated testing, and as such, was unable to adhere to a test driven development approach.
 - When a user makes a donation towards a feature an upvote is not added to the ticket. Admin can check stripe payment history and add the upvote after the fact. Obviously this is not ideal, and needs to be rectified. An upvote should be added automatically to a feature when a donation payment is confirmed. This could be fixed in future versions of the application.
 - Users can currently upvote bugs multiple times. Each bug should only receive a maximum of one upvote per user, this could be fixed in future versions of the application.
+
+</details> 
 
 
 
@@ -379,6 +424,7 @@ os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL genera
 
 
 
+
 **Heroku Deployment**
 
 
@@ -402,6 +448,8 @@ os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL genera
     ``` 
     $ heroku git:remote -a Interstellar Issue Tracker
     ``` 
+
+
 #### With thanks to kimpea
 [found at](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
 
@@ -424,13 +472,17 @@ os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL genera
   
 
 
+
 ### Development vs Deployed Version
+
 
 - In the development version, Debug is set to True and the env.py file is imported into settings.py. However, in the deployed version, Debug is set to False and env.py is commented out. Also, the env.py file is not pushed to GitHub or Heroku as this contains keys which need to remain hidden from other users. The deployed version uses Heroku's PostgreSQL database whereas the development version uses SQLite. 
 
 
 
+
 ## Credits
+
 
 
 [Code Institute](https://codeinstitute.net/)
