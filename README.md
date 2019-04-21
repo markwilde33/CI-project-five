@@ -394,7 +394,9 @@ isolate issues and improve mobile responsiveness.
 The website has been deployed to [Heroku](https://www.heroku.com) and can be accessed [here](https://interstellar-issue-tracker.herokuapp.com/)
 
 #### With thanks to kimpea
-[found at](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
+
+[Found Here](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
+
 
 ### To run this locally...
 
@@ -451,7 +453,9 @@ os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL genera
 
 
 #### With thanks to kimpea
-[found at](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
+
+[Found Here](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
+
 
 7. Use `git status`to outline all staged and unstaged files. Use `git add` to stage all files.
 8. Add env.py to .gitignore with `echo env.py >> .gitignore` so that secret keys are not pushed to GitHub or Heroku.
