@@ -19,7 +19,7 @@
 
 
 1. [Project Instructions](#instructions-from-code-institute)
-2. [Issue Tracker Information](#issuetracker-information)
+2. [Issue Tracker Information](#issue-tracker-information)
 3. [UX](#ux)
     * [Design](#design)
     * [User Stories](#user-stories)
@@ -28,10 +28,9 @@
 6. [Testing](#testing)
     * [User Stories](#user-stories)
     * [Manual Testing](#manual-testing)
-    * [Other](#other)
+    * [Other](#further-testing)
 7. [Deployment](#deployment)
-8.  [Installation](#installation)
-9. [Credits](#credits)
+8. [Credits](#credits)
 
 
 
@@ -121,7 +120,7 @@ Several user stories were considered before development began:
 
 
 
-## Existing Features
+## Features
 
 
 
@@ -136,7 +135,7 @@ Several user stories were considered before development began:
 | Dashboard     |  This is a data visualization page were users can view some of the most important information from the database, in chart form.                                                                                                                                                                                                                                                      |
 | Admin         |  When signed in as admin, the admin panel can be accessed directly from a link in the navbar.                                                                                                                                                                                                                                                                                        |
 | Make Payment  |  A simple page from which a user can confirm they want to donate €9.99 towards their chosen feature, and then make the donation using stripe.                                                                                                                                                                                                                                        |
-| Miscellaneous |  When a user is signed in, the navbar provides links to the tickets, new ticket, Profile and dashboard pages, as well as a link to log them out. The footer provides a link to the projects github page.                                                                                                                                                                             |
+| Miscellaneous |  When a user is signed in, the navbar provides links to the tickets, new ticket, profile and dashboard pages, as well as a link to log them out. The footer provides a link to the projects github page.                                                                                                                                                                             |
 
 
 
@@ -235,7 +234,7 @@ This project also uses custom Django authentication templates to manage URL path
 
 - The project uses [Git](https://git-scm.com) as it's version control system.
   
-- The project uses  a  [Github](https://github.com/markwilde33) repository.
+- The project uses  a  [Github](https://github.com/) repository.
 
 
 
@@ -273,7 +272,7 @@ This project also uses custom Django authentication templates to manage URL path
       <summary><strong><em>Manual Tests</em></strong></summary>
 
 
-## Manual Tests:
+## Manual Testing:
   
   
 
@@ -395,7 +394,7 @@ The website has been deployed to [Heroku](https://www.heroku.com) and can be acc
 
 #### With thanks to kimpea
 
-[Found Here](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
+[Found here](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
 
 
 ### To run this locally...
@@ -454,7 +453,7 @@ os.environ.setdefault('DATABASE_URL', '') and use the key that PostgreSQL genera
 
 #### With thanks to kimpea
 
-[Found Here](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
+[Found here](https://raw.githubusercontent.com/kimpea/us-issue-tracker/master/README.md)
 
 
 7. Use `git status`to outline all staged and unstaged files. Use `git add` to stage all files.
