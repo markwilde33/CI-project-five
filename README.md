@@ -26,9 +26,6 @@
 4. [Features](#features)
 5. [Technologies](#technologies-used)
 6. [Testing](#testing)
-    * [User Stories](#user-stories)
-    * [Manual Testing](#manual-testing)
-    * [Other](#other)
 7. [Deployment](#deployment)
 8. [Credits](#credits)
 
@@ -359,8 +356,6 @@ This project also uses custom Django authentication templates to manage URL path
 
 <details>
       <summary><strong><em>Other</em></strong></summary>
-
-
 
 
 ### Further Testing
