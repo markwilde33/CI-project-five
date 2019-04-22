@@ -28,7 +28,7 @@
 6. [Testing](#testing)
     * [User Stories](#user-stories)
     * [Manual Testing](#manual-testing)
-    * [Other](#further-testing)
+    * [Other](#other)
 7. [Deployment](#deployment)
 8. [Credits](#credits)
 
@@ -269,7 +269,7 @@ This project also uses custom Django authentication templates to manage URL path
 
 
 <details>
-      <summary><strong><em>Manual Tests</em></strong></summary>
+      <summary><strong><em>Manual Testing</em></strong></summary>
 
 
 ## Manual Testing:
