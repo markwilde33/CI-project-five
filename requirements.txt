@@ -1,4 +1,4 @@
-Django==1.11
+Django==2.2.24
 certifi==2019.3.9
 chardet==3.0.4
 colorama==0.2.5
